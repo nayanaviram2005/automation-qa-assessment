@@ -7,7 +7,7 @@ Take-home assessment: QA report on a web app, an n8n API workflow, and an uptime
 | Task 1: QA and debug report | `task1/` | `Task1_QA_Report_NayanaviramPanigrahi.pdf` |
 | Task 2: n8n morning-brief workflow | `task2/` | `Task2_Workflow_NayanaviramPanigrahi.json`, `README_Task2.md` |
 | Bonus: uptime monitor | `bonus/` | `Bonus_UptimeMonitor_NayanaviramPanigrahi.json`, `README_Bonus.md` |
-| Walkthrough video | `video/` | `out/walkthrough.mp4` (captioned, no voice-over) |
+| Walkthrough video | `video/` | `out/walkthrough.mp4` (screen recording of the live demo with on-screen captions, no voice-over) |
 
 ## Task 1 - QA report
 The public RealWorld demo (`demo.realworld.io`) was down (404), so I ran the Express + Prisma + PostgreSQL implementation, [gothinkster/node-express-realworld-example-app](https://github.com/gothinkster/node-express-realworld-example-app), locally with Postgres 15 in Docker. That clone is not included here. The repo has no frontend, so I tested through the HTTP API with curl and by reading the source.
@@ -24,4 +24,4 @@ Pings the Task 1 app every 5 minutes with 3 retries, records response time, aler
 Import the JSON through Workflows > Import from File, then select your own Discord Webhook credential on each Discord node (the files contain the placeholder id `REPLACE_ME`). The workflows are saved, not published.
 
 ## Rebuilding
-`build_report.py`, `build_workflow.py` and `build_monitor.py` regenerate the report and the two workflow files. The video is a Remotion project: in `video/`, run `npm install` then `npm run render`.
+`build_report.py`, `build_workflow.py` and `build_monitor.py` regenerate the report and the two workflow files. The video is a Remotion project: in `video/`, run `npm install` then `npm run render`. It overlays captions on `video/public/walkthrough.mp4`, a 1600x900 recording of a real click-through (the API bug pages, the live n8n run, the saved error run and the monitor runs). The recording script is not included.
